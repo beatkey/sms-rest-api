@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "1c07eb9a-5b9d-464d-8c08-77ff34a82a01",
+		"name": "Twilio Sms Rest Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18191014"
+	},
+	"item": [
+		{
+			"name": "Get All Forms",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/v1/form",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"form"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Filtered Forms",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/v1/form?status=rejected",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"form"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "rejected",
+							"description": "pending|approved|rejected|auto-rejected"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Form",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "emre",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "cal",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "+15005550010",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "birthdate",
+							"value": "2023-01-24",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/form",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"form"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update A Form",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "status",
+							"value": "rejected",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/form/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"form",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
